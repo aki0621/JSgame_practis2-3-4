@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function jikkan(num){
+                let r = "";
+
+                if(num % 10 == 0){
+                    r = "庚";
+                }else if(num % 10 == 1){
+                    r = "辛";
+                }else if(num % 10 == 2){
+                    r = "壬";
+                }else if(num % 10 == 3){
+                    r = "癸";
+                }else if(num % 10 == 4){
+                    r = "甲";
+                }else if(num % 10 == 5){
+                    r = "乙";
+                }else if(num % 10 == 6){
+                    r = "丙";
+                }else if(num % 10 == 7){
+                    r = "丁";
+                }else if(num % 10 == 8){
+                    r = "戊";
+                }else if(num % 10 == 9){
+                    r = "己";
+                };
+
+                return r;
+
+            }
+
+            function junishi(num){
+                let r = "";
+
+                if(num % 12 == 0){
+                    r = "申";
+                }else if(num % 12 == 1){
+                    r = "酉";
+                }else if(num % 12 == 2){
+                    r = "戌";
+                }else if(num % 12 == 3){
+                    r = "亥";
+                }else if(num % 12 == 4){
+                    r = "子";
+                }else if(num % 12 == 5){
+                    r = "丑";
+                }else if(num % 12 == 6){
+                    r = "寅";
+                }else if(num % 12 == 7){
+                    r = "卯";
+                }else if(num % 12 == 8){
+                    r = "辰";
+                }else if(num % 12 == 9){
+                    r = "巳";
+                }else if(num % 12 == 10){
+                    r = "午";
+                }else if(num % 12 == 11){
+                    r = "未";
+                };
+
+                return r;
+            }
+
+            function calc(){
+                let num = document.getElementById("year").value;
+                let ji = jikkan(num);
+                let ju = junishi(num);
+
+                document.getElementById("y").textContent = num;
+                document.getElementById("e").textContent = ji + ju;
+            }
+        </script>
+    </head>
+    <body>
+        <h2><span id="y"></span>年の干支は<span id="e"></span></h2>
+        <p>
+            <input id="year" value="2023">
+            <button onclick="calc()">計算</button>
+        </p>
+    </body>
+</html>
